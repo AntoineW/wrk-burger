@@ -17,15 +17,17 @@
 </head>
 
 <body>
-  <header class="hero">
+  <header class="hero scroll-reveal">
     <h1 class="title">
-      wrk<b>.</b><br/>
-      burger
+      <span class="line">wrk<b>.</b></span>
+      <span class="line">burger</span>
 
-      <small>made for student only</small>
+      <small class="line">made for student only</small>
     </h1>
 
-    <img src="img/burger.svg" alt="" width="290" height="255" class="illustration">
+    <div class="illustration">
+      <div class="lottie-container"></div>
+    </div><!-- .illustration -->
 
     <a href="#love" class="link-scroll">
       <span class="dots">
@@ -34,19 +36,26 @@
         <span class="dot"></span>
       </span><!-- .dots -->
 
-      scroll
+      <span class="text">
+        scroll
+      </span>
     </a>
   </header>
 
   <div id="love" class="section-quote">
-    <div class="inner">
+    <div class="inner scroll-reveal">
       <div class="content">
         <div class="illustration"></div>
 
         <blockquote>
-          We love burger
+          <div class="mark top"></div>
 
-          <small>because it’s minimal, aesthetic and tasty!</small>
+          <div class="line">We love</div>
+          <div class="line">burger</div>
+
+          <small class="line">because it’s minimal, aesthetic and tasty!</small>
+
+          <div class="mark bottom"></div>
         </blockquote>
       </div><!-- .content -->
     </div><!-- .inner -->
@@ -54,7 +63,7 @@
 
   <div class="section-features">
     <div class="features">
-      <div class="feature">
+      <div class="feature scroll-reveal">
         <div class="content">
           <h2 class="title">
             Light up<br/>
@@ -70,10 +79,12 @@
           </p>
         </div><!-- .content -->
 
-        <img src="img/illus-1.svg" alt="" width="344" height="307" class="illustration">
+        <div class="illustration">
+          <div class="lottie-container intro" data-anim="feature-1-intro"></div>
+        </div><!-- .illustration -->
       </div><!-- .feature -->
 
-      <div class="feature">
+      <div class="feature scroll-reveal">
         <div class="content">
           <h2 class="title">
             Not that<br/>
@@ -89,10 +100,12 @@
           </p>
         </div><!-- .content -->
 
-        <img src="img/illus-2.svg" alt="" width="279" height="459" class="illustration">
+        <div class="illustration">
+          <div class="lottie-container intro" data-anim="feature-2-intro"></div>
+        </div><!-- .illustration -->
       </div><!-- .feature -->
 
-      <div class="feature">
+      <div class="feature scroll-reveal">
         <div class="content">
           <h2 class="title">
             Create at<br/>
@@ -105,7 +118,10 @@
           </p>
         </div><!-- .content -->
 
-        <img src="img/illus-3.svg" alt="" width="319" height="176" class="illustration">
+        <div class="illustration">
+          <div class="lottie-container intro" data-anim="feature-3-intro"></div>
+          <div class="lottie-container loop" data-anim="feature-3-loop"></div>
+        </div><!-- .illustration -->
       </div><!-- .feature -->
     </div><!-- .features -->
 
@@ -118,20 +134,32 @@
   </div><!-- .section-features -->
 
   <div class="section-cta">
-    <h2 class="title">
-      Want to eat <br/>
-      our burger today?
-    </h2>
+    <div class="content">
+      <h2 class="title">
+        Want to eat <br/>
+        our burger today?
+      </h2>
 
-    <form action="#" class="form">
-      <div class="form-group">
-        <input type="email" class="form-control" placeholder="Your email address">
+      <form class="form">
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Your email address">
 
-        <button type="submit" class="button" data-text="Cheeze">
-          Cheeze
-        </button>
-      </div>
-    </form>
+          <button type="submit" class="button" data-text="Cheeze">
+            Cheeze
+          </button>
+        </div>
+      </form>
+    </div><!-- .content -->
+
+    <div class="illustration">
+      <div class="lottie-container intro"></div>
+      <div class="lottie-container loop"></div>
+    </div><!-- .illustration -->
+
+    <div class="thank-you">
+      <div class="line">Thank you!</div>
+      <small class="line">...but the burger is a lie.</small>
+    </div><!-- .thank-you -->
   </div><!-- .section-cta -->
 
   <div class="wrk">
@@ -139,6 +167,14 @@
       <img src="img/w-logo.svg" alt="Waaark" width="218" height="102" class="logo">
     </a>
   </div><!-- .wrk -->
+
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.4.1/lottie.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+
+  <script src="js/script.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-75513611-2"></script>

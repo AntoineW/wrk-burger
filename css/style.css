@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* =============================================================================
    =ANIMATIONS
    ========================================================================== */
@@ -90,6 +91,11 @@ body {
   .wrk a:hover .logo {
     opacity: 0.75; }
 
+.scroll-reveal {
+  opacity: 0; }
+  .scroll-reveal.is-revealed {
+    opacity: 1; }
+
 /* =============================================================================
    SECTION: =Hero
    ========================================================================== */
@@ -111,11 +117,13 @@ body {
       -ms-flex-pack: center;
           justify-content: center; }
   .hero .title {
-    margin: 35px 0 0;
+    margin: 30px 0 0;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
     font: 700 46px/0.87 "Montserrat", sans-serif; }
+    .hero .title span {
+      display: block; }
     .hero .title b {
       color: #FF0019; }
     .hero .title small {
@@ -131,9 +139,20 @@ body {
         content: '';
         vertical-align: middle; }
   .hero .illustration {
+    position: relative;
+    width: 300px;
+    height: 270px;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1; }
+  .hero .lottie-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    height: 434px; }
+    .hero .lottie-container svg {
+      display: block; }
   .hero .link-scroll {
     position: absolute;
     right: 100px;
@@ -155,6 +174,8 @@ body {
       transition: background 0.2s ease; }
       .hero .link-scroll .dot:last-child {
         margin-bottom: 0; }
+    .hero .link-scroll .text {
+      display: block; }
     .hero .link-scroll:hover .dot {
       -webkit-animation: scroll-dots 0.5s ease-in-out 0s infinite;
               animation: scroll-dots 0.5s ease-in-out 0s infinite;
@@ -218,7 +239,7 @@ body {
     width: 900px;
     font: 700 208px/0.84 "Montserrat", sans-serif;
     text-transform: lowercase; }
-    .section-quote blockquote:before, .section-quote blockquote:after {
+    .section-quote blockquote .mark {
       display: block;
       position: absolute;
       width: 112px;
@@ -227,14 +248,14 @@ body {
       background-repeat: no-repeat;
       background-size: contain;
       content: ''; }
-    .section-quote blockquote:before {
-      top: -70px;
-      left: -120px;
-      background-image: url("../img/quote-left.svg"); }
-    .section-quote blockquote:after {
-      bottom: 45px;
-      right: 50px;
-      background-image: url("../img/quote-right.svg"); }
+      .section-quote blockquote .mark.top {
+        top: -70px;
+        left: -120px;
+        background-image: url("../img/quote-left.svg"); }
+      .section-quote blockquote .mark.bottom {
+        bottom: 45px;
+        right: 50px;
+        background-image: url("../img/quote-right.svg"); }
     .section-quote blockquote small {
       display: block;
       margin: 60px 0 0;
@@ -278,10 +299,37 @@ body {
       -webkit-box-ordinal-group: 4;
           -ms-flex-order: 3;
               order: 3; }
+    .section-features .feature:nth-child(1) .illustration {
+      width: 322px;
+      height: 308px; }
+    .section-features .feature:nth-child(1) .lottie-container {
+      bottom: 0;
+      left: 0;
+      width: 322px;
+      height: 362px; }
+    .section-features .feature:nth-child(2) .illustration {
+      width: 346px;
+      height: 490px; }
+    .section-features .feature:nth-child(2) .lottie-container {
+      bottom: 0;
+      left: 0;
+      width: 346px;
+      height: 568px; }
+    .section-features .feature:nth-child(3) .illustration {
+      width: 300px;
+      height: 188px; }
+    .section-features .feature:nth-child(3) .lottie-container {
+      bottom: -80px;
+      left: -125px;
+      width: 581px;
+      height: 347px; }
   .section-features .illustration {
+    position: relative;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1; }
+  .section-features .lottie-container {
+    position: absolute; }
   .section-features .content {
     max-width: 312px;
     -webkit-box-ordinal-group: 3;
@@ -316,9 +364,13 @@ body {
    ========================================================================== */
 .section-cta {
   padding: 200px 0;
+  position: relative;
   background: #262626;
   color: #FFFFFF;
   text-align: center; }
+  .section-cta .content {
+    position: relative;
+    z-index: 2; }
   .section-cta .title {
     font: 700 62px/1 "Montserrat", sans-serif; }
   .section-cta .form-group {
@@ -373,26 +425,53 @@ body {
       width: 100%;
       height: 100%;
       content: attr(data-text);
-      -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-      transition: -webkit-transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-      transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-      transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.8, -0.3, 0.2, 1.3);
+      transition: -webkit-transform 0.4s cubic-bezier(0.8, -0.3, 0.2, 1.3);
+      transition: transform 0.4s cubic-bezier(0.8, -0.3, 0.2, 1.3);
+      transition: transform 0.4s cubic-bezier(0.8, -0.3, 0.2, 1.3), -webkit-transform 0.4s cubic-bezier(0.8, -0.3, 0.2, 1.3);
       color: #494537; }
     .section-cta .button:before {
       -webkit-transition-delay: 0.1s;
               transition-delay: 0.1s; }
     .section-cta .button:after {
+      content: '●‿●';
       -webkit-transform: translate3d(0, -100%, 0);
               transform: translate3d(0, -100%, 0); }
-    .section-cta .button:hover {
-      background: #B1E319; }
-      .section-cta .button:hover:before {
-        -webkit-transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0);
-        -webkit-transition-delay: 0s;
-                transition-delay: 0s; }
-      .section-cta .button:hover:after {
-        -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-        -webkit-transition-delay: 0.1s;
-                transition-delay: 0.1s; }
+    .section-cta .button:hover:before {
+      -webkit-transform: translate3d(0, 100%, 0);
+              transform: translate3d(0, 100%, 0);
+      -webkit-transition-delay: 0s;
+              transition-delay: 0s; }
+    .section-cta .button:hover:after {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+      -webkit-transition-delay: 0.1s;
+              transition-delay: 0.1s; }
+  .section-cta .illustration {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 175px;
+    height: 362px;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0); }
+  .section-cta .lottie-container {
+    position: absolute;
+    top: -30px;
+    left: -100px;
+    width: 398px;
+    height: 320px; }
+  .section-cta .thank-you {
+    margin: 130px 0 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    font: 700 62px/1 "Montserrat", sans-serif;
+    text-align: center; }
+    .section-cta .thank-you .line {
+      opacity: 0; }
+    .section-cta .thank-you small {
+      display: block;
+      margin: 12px 0 0;
+      font: 400 16px "Lora", serif; }

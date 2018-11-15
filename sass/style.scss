@@ -58,6 +58,14 @@ body {
     }
 }
 
+.scroll-reveal {
+    opacity: 0;
+
+    &.is-revealed {
+        opacity: 1;
+    }
+}
+
 
 
 /* =============================================================================
@@ -75,11 +83,15 @@ body {
     justify-content: center;
 
     .title {
-        margin: 35px 0 0;
+        margin: 30px 0 0;
 
         order: 2;
 
         font: 700 46px/0.87 $montserrat;
+
+        span {
+            display: block;
+        }
 
         b {
             color: $red;
@@ -106,7 +118,23 @@ body {
     }
 
     .illustration {
+        position: relative;
+        width: 300px;
+        height: 270px;
+
         order: 1;
+    }
+
+    .lottie-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 300px;
+        height: 434px;
+
+        svg {
+            display: block;
+        }
     }
 
     .link-scroll {
@@ -136,6 +164,10 @@ body {
             &:last-child {
                 margin-bottom: 0;
             }
+        }
+
+        .text {
+            display: block;
         }
 
         &:hover {
@@ -212,8 +244,7 @@ body {
         font: 700 208px/0.84 $montserrat;
         text-transform: lowercase;
 
-        &:before,
-        &:after {
+        .mark {
             display: block;
             position: absolute;
             width: 112px;
@@ -223,20 +254,20 @@ body {
             background-repeat: no-repeat;
             background-size: contain;
             content: '';
-        }
 
-        &:before {
-            top: -70px;
-            left: -120px;
+            &.top {
+                top: -70px;
+                left: -120px;
 
-            background-image: url('../img/quote-left.svg');
-        }
+                background-image: url('../img/quote-left.svg');
+            }
 
-        &:after {
-            bottom: 45px;
-            right: 50px;
+            &.bottom {
+                bottom: 45px;
+                right: 50px;
 
-            background-image: url('../img/quote-right.svg');
+                background-image: url('../img/quote-right.svg');
+            }
         }
 
         small {
@@ -291,10 +322,58 @@ body {
                 order: 3;
             }
         }
+
+        &:nth-child(1) {
+            .illustration {
+                width: 322px;
+                height: 308px;
+            }
+
+            .lottie-container {
+                bottom: 0;
+                left: 0;
+                width: 322px;
+                height: 362px;
+            }
+        }
+
+        &:nth-child(2) {
+            .illustration {
+                width: 346px;
+                height: 490px;
+            }
+
+            .lottie-container {
+                bottom: 0;
+                left: 0;
+                width: 346px;
+                height: 568px;
+            }
+        }
+
+        &:nth-child(3) {
+            .illustration {
+                width: 300px;
+                height: 188px;
+            }
+
+            .lottie-container {
+                bottom: -80px;
+                left: -125px;
+                width: 581px;
+                height: 347px;
+            }
+        }
     }
 
     .illustration {
+        position: relative;
+
         order: 1;
+    }
+
+    .lottie-container {
+        position: absolute;
     }
 
     .content {
@@ -351,11 +430,18 @@ body {
 
 .section-cta {
     padding: 200px 0;
+    position: relative;
 
     background: $mineshaft;
 
     color: $white;
     text-align: center;
+
+    .content {
+        position: relative;
+
+        z-index: 2;
+    }
 
     .title {
         font: 700 62px/1 $montserrat;
@@ -413,7 +499,7 @@ body {
             height: 100%;
 
             content: attr(data-text);
-            transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transition: transform 0.4s cubic-bezier(0.800, -0.300, 0.200, 1.300);
 
             color: $armadillo;
         }
@@ -423,11 +509,12 @@ body {
         }
 
         &:after {
+            content: '●‿●';
             transform: translate3d(0, -100%, 0);
         }
 
         &:hover {
-            background: $inchworm;
+            // background: $mauve;
 
             &:before {
                 transform: translate3d(0, 100%, 0);
@@ -438,6 +525,46 @@ body {
                 transform: translate3d(0, 0, 0);
                 transition-delay: 0.1s;
             }
+        }
+    }
+
+    .illustration {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 175px;
+        height: 362px;
+
+        transform: translate3d(-50%, -50%, 0);
+    }
+
+    .lottie-container {
+        position: absolute;
+        top: -30px;
+        left: -100px;
+        width: 398px;
+        height: 320px;
+    }
+
+    .thank-you {
+        margin: 130px 0 0;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+
+        font: 700 62px/1 $montserrat;
+        text-align: center;
+
+        .line {
+            opacity: 0;
+        }
+
+        small {
+            display: block;
+            margin: 12px 0 0;
+
+            font: 400 16px $lora;
         }
     }
 }

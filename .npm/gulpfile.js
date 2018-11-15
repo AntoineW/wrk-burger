@@ -28,8 +28,8 @@ gulp.task('styles', function() {
 
 // Scripts
 gulp.task('scripts', function() {
-  gulp.src(['../js/script.js'])
-    .pipe(jshint(false))
+  return gulp.src(['../js/script.js'])
+    .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
@@ -49,7 +49,7 @@ gulp.task('watch', function() {
   // Reload on change
   gulp.watch(['../index.html']).on('change', browserSync.reload);
   gulp.watch(['../css/style.css']).on('change', browserSync.reload);
-  gulp.watch(['../css/script.css']).on('change', browserSync.reload);
+  gulp.watch(['../js/script.js']).on('change', browserSync.reload);
 });
 
 // Default task
