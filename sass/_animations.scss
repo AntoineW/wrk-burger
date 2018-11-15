@@ -40,3 +40,13 @@
 		background-position: calc( 50% + 1920px ) 50%;
 	}
 }
+
+@keyframes picture-wave {
+	0% {
+		background-position: -100px 50%;
+	}
+
+	100% {
+		background-position: -132px 50%;
+	}
+}

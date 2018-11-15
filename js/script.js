@@ -276,6 +276,18 @@ $(function() {
 		e.preventDefault();
 	}
 	$('.section-cta form').on('submit', formHandler);
+
+
+	/**
+	 * Light up
+	 */
+	function lightUp(e) {
+		var illustration = $(this).closest('.illustration');
+		illustration.find('.picture').toggleClass('is-visible');
+
+		e.preventDefault();
+	}
+	$('.feature .switch').on('click', lightUp)
 });
 
 // Force scroll reveal animations on load

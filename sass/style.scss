@@ -336,6 +336,50 @@ body {
                 width: 322px;
                 height: 362px;
             }
+
+            .picture {
+                position: absolute;
+                top: 54px;
+                left: 229px;
+                width: 66px;
+                height: 66px;
+
+                opacity: 0;
+                overflow: hidden;
+                transition: opacity 0.07s;
+
+                &:before {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 100px;
+                    height: 100px;
+
+                    animation: picture-wave 1.25s linear 0s infinite normal forwards;
+                    background-color: $tussock;
+                    background-image: url('../img/burger-shape.svg');
+                    background-position: -100px 50%;
+                    background-size: 323px 121px;
+                    content: '';
+                    transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+                }
+
+                &.is-visible {
+                    opacity: 1;
+                }
+            }
+
+            .switch {
+                position: absolute;
+                top: 237px;
+                left: 135px;
+                width: 40px;
+                height: 40px;
+
+                cursor: pointer;
+                opacity: 0;
+                transform: translate3d(-50%, -50%, 0);
+            }
         }
 
         &:nth-child(2) {
