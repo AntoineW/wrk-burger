@@ -378,6 +378,7 @@ body {
 
                 cursor: pointer;
                 opacity: 0;
+                transform-origin: 3px 0;
                 transition: height 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 
                 &:before {
@@ -395,7 +396,7 @@ body {
                 .wire {
                     display: block;
                     bottom: 0;
-                    left: 50%;
+                    left: 3px;
                     position: absolute;
                     width: 1px;
                     height: 100%;
@@ -416,7 +417,7 @@ body {
                 }
 
                 &:hover {
-                    height: 40px;
+                    animation: switch-move 1s ease 0s 1;
                 }
             }
         }

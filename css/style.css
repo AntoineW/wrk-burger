@@ -65,6 +65,46 @@
   100% {
     background-position: -132px 50%; } }
 
+@-webkit-keyframes switch-move {
+  0% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0); }
+  25% {
+    -webkit-transform: rotateZ(10deg);
+            transform: rotateZ(10deg); }
+  30% {
+    -webkit-transform: rotateZ(8deg);
+            transform: rotateZ(8deg); }
+  70% {
+    -webkit-transform: rotateZ(-8deg);
+            transform: rotateZ(-8deg); }
+  75% {
+    -webkit-transform: rotateZ(-6deg);
+            transform: rotateZ(-6deg); }
+  100% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0); } }
+
+@keyframes switch-move {
+  0% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0); }
+  25% {
+    -webkit-transform: rotateZ(10deg);
+            transform: rotateZ(10deg); }
+  30% {
+    -webkit-transform: rotateZ(8deg);
+            transform: rotateZ(8deg); }
+  70% {
+    -webkit-transform: rotateZ(-8deg);
+            transform: rotateZ(-8deg); }
+  75% {
+    -webkit-transform: rotateZ(-6deg);
+            transform: rotateZ(-6deg); }
+  100% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0); } }
+
 /* =============================================================================
    BASE: =Base
    ========================================================================== */
@@ -355,6 +395,8 @@ body {
       height: 35px;
       cursor: pointer;
       opacity: 0;
+      -webkit-transform-origin: 3px 0;
+              transform-origin: 3px 0;
       -webkit-transition: height 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
       transition: height 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
       .section-features .feature:nth-child(1) .switch:before {
@@ -369,7 +411,7 @@ body {
       .section-features .feature:nth-child(1) .switch .wire {
         display: block;
         bottom: 0;
-        left: 50%;
+        left: 3px;
         position: absolute;
         width: 1px;
         height: 100%;
@@ -384,7 +426,8 @@ body {
         background: #FF0019;
         border-radius: 50%; }
       .section-features .feature:nth-child(1) .switch:hover {
-        height: 40px; }
+        -webkit-animation: switch-move 1s ease 0s 1;
+                animation: switch-move 1s ease 0s 1; }
     .section-features .feature:nth-child(2) .illustration {
       width: 346px;
       height: 490px; }
