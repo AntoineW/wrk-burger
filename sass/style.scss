@@ -1,0 +1,383 @@
+// Sass import
+$base_dir: './';
+@import "_variables.scss";
+@import "_animations.scss";
+
+
+
+/* =============================================================================
+   BASE: =Base
+   ========================================================================== */
+
+::selection {
+	background: $red;
+
+	color: $white;
+    text-shadow: none;
+}
+
+html, body {
+    position: relative;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    background: $broom;
+
+	color: $armadillo;
+    font: 18px/1.5 $lora;
+}
+
+* {
+    outline: none;
+	box-sizing: border-box;
+}
+
+.wrk {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+
+    z-index: 10;
+
+    .logo {
+        width: 30px;
+        height: auto;
+
+        opacity: 0.3;
+    }
+}
+
+
+
+/* =============================================================================
+   SECTION: =Hero
+   ========================================================================== */
+
+.hero {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: calc( 100vh - 100px );
+
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    .title {
+        margin: 35px 0 0;
+
+        order: 2;
+
+        font: 700 46px/0.87 $montserrat;
+
+        b {
+            color: $red;
+        }
+
+        small {
+            display: block;
+            margin: 12px 0 0;
+
+            font: 400 13px $lora;
+
+            &:before {
+                display: inline-block;
+                margin: 0 5px 0 0;
+                width: 11px;
+                height: 1px;
+
+                background: $armadillo;
+                content: '';
+
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .illustration {
+        order: 1;
+    }
+
+    .link-scroll {
+        position: absolute;
+        right: 100px;
+        bottom: 50px;
+
+        color: $armadillo;
+        font: 700 16px/1 $montserrat;
+        text-decoration: none;
+
+        .dots {
+            display: block;
+            margin: 0 0 10px;
+        }
+
+        .dot {
+            display: block;
+            margin: 0 auto 6px;
+            width: 6px;
+            height: 6px;
+
+            background: $armadillo;
+            border-radius: 50%;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+
+
+/* =============================================================================
+   SECTION: =Quote
+   ========================================================================== */
+
+.section-quote {
+    position: relative;
+    min-height: 900px;
+
+    background-image: url('../img/section-background.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:before {
+        display: block;
+        padding-top: 48.95%;
+        content: '';
+    }
+
+    .inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .content {
+        display: flex;
+        height: 100%;
+
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .illustration {
+        margin: 0 10px 50px 0;
+        width: 280px;
+        height: 280px;
+
+        background-color: $tussock;
+        background-image: url('../img/burger-shape.svg');
+        background-position: -100px 50%;
+        background-size: 860px 322px;
+        border-radius: 50%;
+        transform: rotateZ(-45deg);
+    }
+
+
+    blockquote {
+        padding: 0;
+        position: relative;
+        width: 900px;
+
+        font: 700 208px/0.84 $montserrat;
+        text-transform: lowercase;
+
+        &:before,
+        &:after {
+            display: block;
+            position: absolute;
+            width: 112px;
+            height: 89px;
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: '';
+        }
+
+        &:before {
+            top: -70px;
+            left: -120px;
+
+            background-image: url('../img/quote-left.svg');
+        }
+
+        &:after {
+            bottom: 45px;
+            right: 50px;
+
+            background-image: url('../img/quote-right.svg');
+        }
+
+        small {
+            display: block;
+            margin: 60px 0 0;
+
+            font: 400 28px $lora;
+
+            &:before {
+                display: inline-block;
+                margin: 0 25px 0 15px;
+                width: 57px;
+                height: 1px;
+
+                background: $armadillo;
+                content: '';
+
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+
+
+/* =============================================================================
+   SECTION: =Features
+   ========================================================================== */
+
+.section-features {
+    padding: 100px 0;
+    position: relative;
+
+    .features {
+        position: relative;
+
+        z-index: 2;
+    }
+
+    .feature {
+        display: flex;
+        margin: 0 auto;
+        padding: 140px 0;
+        max-width: 740px;
+
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &:nth-child(2n) {
+            .illustration {
+                order: 3;
+            }
+        }
+    }
+
+    .illustration {
+        order: 1;
+    }
+
+    .content {
+        max-width: 312px;
+
+        order: 2;
+    }
+
+    .title {
+        margin: 0 0 0.5em;
+
+        font: 700 62px/1 $montserrat;
+        white-space: nowrap;
+    }
+
+    .shapes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        z-index: 1;
+
+        .shape {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            &:nth-child(1) {
+                margin: -970px 0 0 -410px;
+            }
+
+            &:nth-child(2) {
+                margin: -450px 0 0 310px;
+            }
+
+            &:nth-child(3) {
+                margin: 330px 0 0 390px;
+            }
+
+            &:nth-child(4) {
+                margin: 770px 0 0 10px;
+            }
+        }
+    }
+}
+
+
+
+/* =============================================================================
+   SECTION: =CTA
+   ========================================================================== */
+
+.section-cta {
+    padding: 200px 0;
+
+    background: $mineshaft;
+
+    color: $white;
+    text-align: center;
+
+    .title {
+        font: 700 62px/1 $montserrat;
+    }
+
+    .form-group {
+        display: inline-block;
+        position: relative;
+    }
+
+    .form-control {
+        padding: 0 160px 0 30px;
+        width: 420px;
+        height: 60px;
+
+        appearance: none;
+        border: 0;
+        border-radius: 30px;
+
+        font: 18px/60px $lora;
+        line-height: 60px;
+
+        &::placeholder {
+            opacity: 0.5;
+
+            color: $armadillo;
+        }
+    }
+
+    .button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 130px;
+        height: 60px;
+
+        appearance: none;
+        background: $broom;
+        border: 0;
+        border-radius: 30px;
+        cursor: pointer;
+
+        color: $armadillo;
+        font: 700 18px/60px $montserrat;
+    }
+}

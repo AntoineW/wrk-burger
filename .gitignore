@@ -1,0 +1,3 @@
+*node_modules*
+*.sublime*
+/.npm/package-lock.json
