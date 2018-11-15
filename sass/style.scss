@@ -371,14 +371,53 @@ body {
 
             .switch {
                 position: absolute;
-                top: 237px;
-                left: 135px;
-                width: 40px;
-                height: 40px;
+                top: 206px;
+                left: 132px;
+                width: 7px;
+                height: 35px;
 
                 cursor: pointer;
                 opacity: 0;
-                transform: translate3d(-50%, -50%, 0);
+                transition: height 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+                &:before {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: -20px;
+                    bottom: -5px;
+                    left: -20px;
+
+                    background: transparent;
+                    content: '';
+                }
+
+                .wire {
+                    display: block;
+                    bottom: 0;
+                    left: 50%;
+                    position: absolute;
+                    width: 1px;
+                    height: 100%;
+
+                    background: repeating-linear-gradient($armadillo, $armadillo 2px, transparent 2px, transparent 4px);
+                }
+
+                .button {
+                    margin: 0 0 0 -3px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: 7px;
+                    height: 7px;
+
+                    background: $red;
+                    border-radius: 50%;
+                }
+
+                &:hover {
+                    height: 40px;
+                }
             }
         }
 

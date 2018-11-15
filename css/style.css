@@ -349,14 +349,42 @@ body {
         opacity: 1; }
     .section-features .feature:nth-child(1) .switch {
       position: absolute;
-      top: 237px;
-      left: 135px;
-      width: 40px;
-      height: 40px;
+      top: 206px;
+      left: 132px;
+      width: 7px;
+      height: 35px;
       cursor: pointer;
       opacity: 0;
-      -webkit-transform: translate3d(-50%, -50%, 0);
-              transform: translate3d(-50%, -50%, 0); }
+      -webkit-transition: height 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+      transition: height 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+      .section-features .feature:nth-child(1) .switch:before {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -20px;
+        bottom: -5px;
+        left: -20px;
+        background: transparent;
+        content: ''; }
+      .section-features .feature:nth-child(1) .switch .wire {
+        display: block;
+        bottom: 0;
+        left: 50%;
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background: repeating-linear-gradient(#494537, #494537 2px, transparent 2px, transparent 4px); }
+      .section-features .feature:nth-child(1) .switch .button {
+        margin: 0 0 0 -3px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 7px;
+        height: 7px;
+        background: #FF0019;
+        border-radius: 50%; }
+      .section-features .feature:nth-child(1) .switch:hover {
+        height: 40px; }
     .section-features .feature:nth-child(2) .illustration {
       width: 346px;
       height: 490px; }

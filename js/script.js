@@ -201,6 +201,31 @@ $(function() {
 			0
 		);
 
+		if (feature.find('.switch').length === 1) {
+			tl.to(
+				feature.find('.switch'),
+				0.1,
+				{
+					opacity: 1
+				},
+				1.3
+			);
+
+			tl.from(
+				feature.find('.switch'),
+				0.8,
+				{
+					height: 0,
+					ease: Power3.easeOut,
+					clearProps: 'height, transition',
+					onStart: function() {
+						feature.find('.switch').css({transition: 'none'});
+					}
+				},
+				1.3
+			);
+		}
+
 	}
 	$('.feature').on('reveal', initFeature);
 
