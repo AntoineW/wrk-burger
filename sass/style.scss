@@ -48,6 +48,13 @@ body {
         height: auto;
 
         opacity: 0.3;
+        transition: opacity 0.1s;
+    }
+
+    a:hover {
+        .logo {
+            opacity: 0.75;
+        }
     }
 }
 
@@ -124,9 +131,27 @@ body {
 
             background: $armadillo;
             border-radius: 50%;
+            transition: background 0.2s ease;
 
             &:last-child {
                 margin-bottom: 0;
+            }
+        }
+
+        &:hover {
+            // color: $red;
+
+            .dot {
+                animation: scroll-dots 0.5s ease-in-out 0s infinite;
+                background: $red;
+
+                &:nth-child(2) {
+                    animation-delay: 0.1s;
+                }
+
+                &:nth-child(3) {
+                    animation-delay: 0.2s;
+                }
             }
         }
     }
@@ -140,18 +165,13 @@ body {
 
 .section-quote {
     position: relative;
-    min-height: 900px;
+    height: 940px;
 
+    animation: background-wave 15s linear infinite;
     background-image: url('../img/section-background.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    &:before {
-        display: block;
-        padding-top: 48.95%;
-        content: '';
-    }
+    background-position: 50%;
+    background-repeat: repeat-x;
+    background-size: 1920px 940px;
 
     .inner {
         position: absolute;
@@ -174,12 +194,13 @@ body {
         width: 280px;
         height: 280px;
 
+        animation: illustration-wave 2s linear 0s infinite normal forwards;
         background-color: $tussock;
         background-image: url('../img/burger-shape.svg');
         background-position: -100px 50%;
         background-size: 860px 322px;
         border-radius: 50%;
-        transform: rotateZ(-45deg);
+        transform: rotateZ(135deg);
     }
 
 
@@ -376,8 +397,47 @@ body {
         border: 0;
         border-radius: 30px;
         cursor: pointer;
+        overflow: hidden;
+        transition: background 0.1s linear 0.1s;
 
-        color: $armadillo;
+        color: transparent;
         font: 700 18px/60px $montserrat;
+
+        &:before,
+        &:after {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            content: attr(data-text);
+            transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+            color: $armadillo;
+        }
+
+        &:before {
+            transition-delay: 0.1s;
+        }
+
+        &:after {
+            transform: translate3d(0, -100%, 0);
+        }
+
+        &:hover {
+            background: $inchworm;
+
+            &:before {
+                transform: translate3d(0, 100%, 0);
+                transition-delay: 0s;
+            }
+
+            &:after {
+                transform: translate3d(0, 0, 0);
+                transition-delay: 0.1s;
+            }
+        }
     }
 }
