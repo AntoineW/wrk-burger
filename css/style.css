@@ -198,7 +198,8 @@ body {
   background-image: url("../img/section-background.svg");
   background-position: 50%;
   background-repeat: repeat-x;
-  background-size: 1920px 940px; }
+  background-size: 1920px 940px;
+  z-index: 2; }
   .section-quote .inner {
     position: absolute;
     top: 0;

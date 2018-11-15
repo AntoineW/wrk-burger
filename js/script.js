@@ -16,6 +16,25 @@ $(function() {
 				element.addClass('is-revealed');
 			}
 		});
+
+		// Parallax elements
+		var maxScrollTop = $(document).height() - $(window).height();
+		var scroll = $(window).scrollTop() / maxScrollTop;
+		scroll = -1 + scroll * 2; // we want a value between -1 and 1
+
+		$('.section-features .shape').each(function() {
+			var shape = $(this);
+			var shapeGap = 0;
+
+			if (!shape.attr('data-gap')) {
+				shapeGap = Math.random() * 400;
+				shape.attr('data-gap', shapeGap);
+			} else {
+				shapeGap = Number(shape.attr('data-gap'));
+			}
+
+			shape.css({transform: 'translate3d(0, ' + ( shapeGap * scroll ) + 'px, 0)'});
+		});
 	}
 	$(window).on('scroll', scrollHandler);
 
