@@ -137,7 +137,8 @@ $(function() {
 			{
 				alpha: 0,
 				scale: 0.5,
-				ease: Back.easeOut
+				ease: Back.easeOut,
+				clearProps: 'transform'
 			},
 			0.3
 		);

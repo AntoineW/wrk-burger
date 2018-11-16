@@ -262,6 +262,7 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    padding: 0 50px;
     height: 100%;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -274,7 +275,7 @@ body {
         -ms-flex-pack: center;
             justify-content: center; }
   .section-quote .illustration {
-    margin: 0 10px 50px 0;
+    margin: 0 50px 50px 0;
     width: 280px;
     height: 280px;
     -webkit-animation: illustration-wave 2s linear 0s infinite normal forwards;
@@ -284,9 +285,12 @@ body {
     background-position: -100px 50%;
     background-size: 860px 322px;
     border-radius: 50%;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
     -webkit-transform: rotateZ(135deg);
             transform: rotateZ(135deg); }
   .section-quote blockquote {
+    margin: 0;
     padding: 0;
     position: relative;
     width: 900px;
@@ -458,8 +462,7 @@ body {
             order: 2; }
   .section-features .title {
     margin: 0 0 0.5em;
-    font: 700 62px/1 "Montserrat", sans-serif;
-    white-space: nowrap; }
+    font: 700 62px/1 "Montserrat", sans-serif; }
   .section-features .shapes {
     position: absolute;
     top: 0;
@@ -596,3 +599,27 @@ body {
       display: block;
       margin: 12px 0 0;
       font: 400 16px "Lora", serif; }
+
+/* =============================================================================
+   =MEDIA QUERIES
+   ========================================================================== */
+/**
+ * Screen, small size
+ */
+@media only screen and (max-width: 1280px) {
+  /**
+     * SECTION: =Quote
+     */
+  .section-quote {
+    height: 1120px;
+    background-size: cover;
+    overflow: hidden; }
+    .section-quote .content {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+    .section-quote .illustration {
+      margin: 0; }
+    .section-quote blockquote {
+      margin: 40px 0 20px 170px; } }

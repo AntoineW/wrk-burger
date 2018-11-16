@@ -215,6 +215,7 @@ body {
     }
     .content {
         display: flex;
+        padding: 0 50px;
         height: 100%;
 
         align-items: center;
@@ -223,7 +224,7 @@ body {
     }
 
     .illustration {
-        margin: 0 10px 50px 0;
+        margin: 0 50px 50px 0;
         width: 280px;
         height: 280px;
 
@@ -233,11 +234,13 @@ body {
         background-position: -100px 50%;
         background-size: 860px 322px;
         border-radius: 50%;
+        flex-shrink: 0;
         transform: rotateZ(135deg);
     }
 
 
     blockquote {
+        margin: 0;
         padding: 0;
         position: relative;
         width: 900px;
@@ -471,7 +474,6 @@ body {
         margin: 0 0 0.5em;
 
         font: 700 62px/1 $montserrat;
-        white-space: nowrap;
     }
 
     .shapes {
@@ -652,4 +654,37 @@ body {
             font: 400 16px $lora;
         }
     }
+}
+
+
+/* =============================================================================
+   =MEDIA QUERIES
+   ========================================================================== */
+
+/**
+ * Screen, small size
+ */
+@media only screen and (max-width:1280px) {
+    /**
+     * SECTION: =Quote
+     */
+    .section-quote {
+        height: 1120px;
+
+        background-size: cover;
+        overflow: hidden;
+
+        .content {
+            flex-direction: column;
+        }
+
+        .illustration {
+            margin: 0;
+        }
+
+        blockquote {
+            margin: 40px 0 20px 170px;
+        }
+    }
+
 }
