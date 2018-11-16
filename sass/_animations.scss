@@ -3,3 +3,40 @@
    =ANIMATIONS
    ========================================================================== */
 
+@keyframes scroll-dots {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	25% {
+		transform: translate3d(-4px, 0, 0);
+	}
+
+	75% {
+		transform: translate3d(4px, 0, 0);
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes background-wave {
+	0% {
+		background-position: 50% 50%;
+	}
+
+	100% {
+		background-position: calc( 50% + 1920px ) 50%;
+	}
+}
+
+@keyframes illustration-wave {
+	0% {
+		background-position: -100px 50%;
+	}
+
+	100% {
+		background-position: -184px 50%;
+	}
+}
